@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 aircon
+
+  #chart
+
+  ul.button-list
+    li
+      a(href="/aircon/hot")
+        button.btn.btn-danger HOT
+    li
+      a(href="/aircon/cool")
+        button.btn.btn-info COOL
+    li
+      a(href="/aircon/off")
+        button.btn.btn-success OFF

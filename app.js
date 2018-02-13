@@ -8,7 +8,7 @@ var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
 var aircon = require('./routes/aircon');
-var speech = require('./routes/speech');
+var temperature = require('./routes/temperature');
 
 var app = express();
 
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/aircon', aircon);
-app.use('/speech', speech);
+app.use('/temperature', temperature);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

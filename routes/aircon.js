@@ -9,22 +9,4 @@ router.get('/', (req, res, next) => {
   })
 })
 
-router.get('/hot', (req, res, next) => {
-  let response
-  exec('irsend SEND_ONCE aircon hot_on')
-  res.redirect('/aircon')
-})
-
-router.get('/cool', (req, res, next) => {
-  let response
-  exec('irsend SEND_ONCE aircon cool_on')
-  res.redirect('/aircon')
-})
-
-router.get('/off', (req, res, next) => {
-  let response
-  exec('irsend SEND_ONCE aircon off')
-  res.redirect('/aircon')
-})
-
 module.exports = router

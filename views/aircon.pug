@@ -7,11 +7,10 @@ block content
 
   ul.button-list
     li
-      a(href="/aircon/hot")
-        button.btn.btn-danger HOT
+      button.btn.btn-danger(onclick="hot()") HOT
     li
-      a(href="/aircon/cool")
-        button.btn.btn-info COOL
+      button.btn.btn-info(onclick="cool()") COOL
     li
-      a(href="/aircon/off")
-        button.btn.btn-success OFF
+      button.btn.btn-success(onclick="off()") OFF
+
+  script(src='/javascripts/aircon.js')

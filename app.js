@@ -10,6 +10,8 @@ var index = require('./routes/index');
 var aircon = require('./routes/aircon');
 var temperature = require('./routes/temperature');
 
+var airconApi = require('./routes/api/aircon');
+
 var app = express();
 
 // view engine setup
@@ -20,7 +22,7 @@ app.set('view engine', 'pug');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
@@ -33,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/aircon', aircon);
 app.use('/temperature', temperature);
+
+app.use('/api/aircon', airconApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
